@@ -1,0 +1,20 @@
+@mixin align-left() {
+  text-align: left;
+}
+
+@mixin section-border() {
+  border: $section-border;
+  border-radius: 10px;
+}
+
+@mixin button() {
+  border: 1px solid $beige;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px $beige, -1px -1px 5px $beige;
+}
+
+@mixin flex-col-center() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

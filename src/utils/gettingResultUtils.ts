@@ -1,10 +1,13 @@
+import { isNumber } from 'lodash';
+import { RESULT_NEGATIVE, RESULT_NO_ARR, RESULT_POSITIVE } from './constants';
+
 export const checkIfLastElement = (
   arr: number[],
   indexOfLastItem: number,
-  item?: number,
-  itemIndex?: number
+  itemIndex: number,
+  item?: number
 ): boolean => {
-  if (!item || !itemIndex) {
+  if (!item || !isNumber(itemIndex)) {
     return false;
   }
 
@@ -23,4 +26,16 @@ export const checkIfLastElement = (
     arr[highestPossibleIndex],
     highestPossibleIndex
   );
+};
+
+export const getResultMessage = (mainArr: number[], isWinnable: boolean) => {
+  if (mainArr.length === 0) {
+    return RESULT_NO_ARR;
+  }
+  if (isWinnable) {
+    return RESULT_POSITIVE;
+  }
+  if (!isWinnable) {
+    return RESULT_NEGATIVE;
+  }
 };

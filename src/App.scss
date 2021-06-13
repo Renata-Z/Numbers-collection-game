@@ -1,9 +1,130 @@
+@import 'styles/_mixins';
+@import 'styles/_variables';
+
+*,
+html {
+  background-color: #03254a;
+  color: #daeef3;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
 .App {
   text-align: center;
   margin: 10px 50px;
+  .app-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}
+
+/* --- INSTRUCTIONS SECTION ----------------------------------------------- */
+.instructions-container {
+  @include section-border();
+  padding: 0px 20px 5px;
+}
+
+.instructions-list {
+  @include align-left;
+}
+
+.list-item {
+  @include align-left;
+}
+
+/* --- GAME CONTENT SECTION ----------------------------------------------- */
+.game-content {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  @include section-border();
+}
+
+.left-container {
+  padding: 20px 20px;
+  border-right: $section-border;
+  border-radius: 10px 0 0 10px;
+  align-self: stretch;
+  flex-basis: 50%;
+}
+
+.input-container {
+  @include flex-col-center();
+}
+
+.input-label {
+  margin: 20px 0px;
+}
+
+.input-numbers {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: $beige;
+  margin: 0px 0px 20px 0px;
+  width: 125px;
+  font-size: medium;
+  &:focus {
+    border-color: $green;
+  }
+}
+
+.button-add {
+  height: 70px;
+  width: 125px;
+  @include button();
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.right-container {
+  @include flex-col-center();
+  flex-basis: 50%;
+  border-radius: 0px 10px 10px 0px;
+  align-self: stretch;
+}
+
+.arr-container {
+  border-bottom: $section-border;
+  width: 100%;
+  border-radius: 0px 10px 0px 0px;
+}
+
+.button-clear {
+  @include button();
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  &:hover {
+    background-color: $red;
+  }
+}
+
+.result-container {
+  margin: 15px 0 10px;
 }
 
 .button-result {
-  display: block;
-  margin: 20px auto;
+  @include button();
+  width: 110px;
+  height: 60px;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.message-negative {
+  color: $red;
+  height: 10px;
+}
+.message-positive {
+  color: $green;
+  height: 10px;
 }

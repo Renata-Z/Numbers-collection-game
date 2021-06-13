@@ -6,7 +6,7 @@ Determine if you can reach the last element on a numbers array, according to the
 - Current element value indicates how many steps you can take at most (example: if the value is 3 you can take 0, 1, 2 or 3 steps).
 - You have to end up on the last array element.
 
-The user can insert numbers which are being used in the game.
+The user can modify numbers collection which are being used in the game.
 
 ## Tech Stack:
 
