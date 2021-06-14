@@ -25,4 +25,14 @@ describe('check if the last element can be reached', () => {
     const result = calculateResult([1, -12, 0, 3, 0, 2, 0]);
     expect(result).not.toBeTruthy();
   });
+
+  it('should return false when only one value entered', () => {
+    const result = calculateResult([-2]);
+    expect(result).not.toBeTruthy();
+  });
+
+  it('should return tre when only two positive values entered', () => {
+    const result = calculateResult([1, 3]);
+    expect(result).toBeTruthy();
+  });
 });
