@@ -4,10 +4,7 @@ import { ButtonClear } from '../Components/ButtonClear';
 import { ButtonResult } from '../Components/ButtonResult';
 import { Input } from '../Components/Input';
 import { MainArr } from '../Components/MainArrayConterner';
-import {
-  checkIfLastElement,
-  getResultMessage
-} from '../utils/gettingResultUtils';
+import { calculateResult, getResultMessage } from '../utils/gettingResultUtils';
 
 export const Game = () => {
   const [mainArr, setMainArr] = useState<number[]>([]);
@@ -33,9 +30,16 @@ export const Game = () => {
   };
 
   const onCheckResultClicked = () => {
-    const indexOfLastItem = mainArr.length - 1;
+    console.log(mainArr);
+    const result = calculateResult(mainArr);
+    // const indexOfLastItem = mainArr.length - 1;
 
-    const result = checkIfLastElement(mainArr, indexOfLastItem, 0, mainArr[0]);
+    // const result = checkIfLastElementReached(
+    //   mainArr,
+    //   indexOfLastItem,
+    //   mainArr[0],
+    //   0
+    // );
     setIsWinnable(result);
     setShowResult(true);
   };
