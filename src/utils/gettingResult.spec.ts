@@ -26,9 +26,14 @@ describe('check if the last element can be reached', () => {
     expect(result).not.toBeTruthy();
   });
 
-  it('should return false when only one value entered', () => {
+  it('should return false when only one negative value entered', () => {
     const result = calculateResult([-2]);
     expect(result).not.toBeTruthy();
+  });
+
+  it('should return false when only one positive value entered', () => {
+    const result = calculateResult([2]);
+    expect(result).toBeTruthy();
   });
 
   it('should return tre when only two positive values entered', () => {
