@@ -30,16 +30,8 @@ export const Game = () => {
   };
 
   const onCheckResultClicked = () => {
-    console.log(mainArr);
     const result = calculateResult(mainArr);
-    // const indexOfLastItem = mainArr.length - 1;
 
-    // const result = checkIfLastElementReached(
-    //   mainArr,
-    //   indexOfLastItem,
-    //   mainArr[0],
-    //   0
-    // );
     setIsWinnable(result);
     setShowResult(true);
   };
