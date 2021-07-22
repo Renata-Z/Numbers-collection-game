@@ -19,3 +19,12 @@ The user can modify numbers collection which are being used in the game.
 
 - npm install
 - npm start
+
+## Testing:
+- npm test
+
+## Possible improvements:
+- update inputs value after adding a number to the array.
+- solve vulnerability to infinite loop, e.g. when use [ 2, 2, -2, 1 ] as input.
+- improve the UI to create a more convenient way to enter numbers (now one number at a time, if you do a mistake, you have to clear everything and start over).
+- improve the algorithm to provide most efficient path.
